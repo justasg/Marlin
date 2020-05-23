@@ -755,7 +755,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 // TH3D: #define DEFAULT_MAX_ACCELERATION      { 500, 800, 500, 5000 }
-#define DEFAULT_MAX_ACCELERATION      { 800, 800, 500, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 5000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -777,7 +777,7 @@
     #define DEFAULT_RETRACT_ACCELERATION  500  
     #define DEFAULT_TRAVEL_ACCELERATION   500   
 */
-#define DEFAULT_ACCELERATION          600    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  600    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   600    // X, Y, Z acceleration for travel (non printing) moves
 
@@ -801,7 +801,7 @@
 
   #define DEFAULT_XJERK 8.0
   #define DEFAULT_YJERK 8.0
-  #define DEFAULT_ZJERK  0.3
+  #define DEFAULT_ZJERK  0.4
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
@@ -812,7 +812,7 @@
 #endif
 
 // TH3D: #define DEFAULT_EJERK                  5.0
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    4.5  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -833,7 +833,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION
+#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
