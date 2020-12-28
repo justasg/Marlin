@@ -1167,7 +1167,7 @@
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 // TH3D: #define Z_MAX_POS 250
-#define Z_MAX_POS 230
+#define Z_MAX_POS 200
 
 /**
  * Software Endstops
