@@ -495,13 +495,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  22.20,  22.20 }
-    #define DEFAULT_Ki_LIST {   1.08,   1.08 }
-    #define DEFAULT_Kd_LIST { 114.00, 114.00 }
+    #define DEFAULT_Kp_LIST {  27.53,  22.20 }
+    #define DEFAULT_Ki_LIST {   2.35,   1.08 }
+    #define DEFAULT_Kd_LIST {  80.55, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  27.53
+    #define DEFAULT_Ki   2.35
+    #define DEFAULT_Kd  80.55
   #endif
 #endif // PIDTEMP
 
@@ -752,7 +752,8 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 // TH3D: #define DEFAULT_MAX_FEEDRATE          { 200, 200, 15, 50 }
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 15, 50 }
+// JG: as per https://www.reddit.com/r/ender3/comments/adb24q/printing_at_120mms_with_quality/
+#define DEFAULT_MAX_FEEDRATE          { 1000, 1000, 30, 100 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -766,7 +767,8 @@
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
 // TH3D: #define DEFAULT_MAX_ACCELERATION      { 500, 800, 500, 5000 }
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 5000 }
+// JG: as per https://www.reddit.com/r/ender3/comments/adb24q/printing_at_120mms_with_quality/
+#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 200, 7500 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -788,9 +790,10 @@
     #define DEFAULT_RETRACT_ACCELERATION  500  
     #define DEFAULT_TRAVEL_ACCELERATION   500   
 */
-#define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  600    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   600    // X, Y, Z acceleration for travel (non printing) moves
+// JG: as per https://www.reddit.com/r/ender3/comments/adb24q/printing_at_120mms_with_quality/
+#define DEFAULT_ACCELERATION          1500    // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1500    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   1500    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -810,9 +813,9 @@
     #define DEFAULT_ZJERK                  0.3
 */
 
-  #define DEFAULT_XJERK 8.0
-  #define DEFAULT_YJERK 8.0
-  #define DEFAULT_ZJERK  0.4
+  #define DEFAULT_XJERK 7.0
+  #define DEFAULT_YJERK 7.0
+  #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
