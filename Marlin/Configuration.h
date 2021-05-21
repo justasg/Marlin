@@ -743,7 +743,7 @@
  */
 // Z steps - value from TH3D firmware, under constant CREALITY_Z_STEPS
 // E steps - custom value from my Melzi firmware settings
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 320, 320, 1600, 435 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 320, 320, 6400, 435 }
  
 
 /**
@@ -849,7 +849,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
